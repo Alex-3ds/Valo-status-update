@@ -16,7 +16,7 @@ export const Layout: FC<Props> = ({
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-      <meta name="theme-color" content="#0a0010" />
+      <meta name="theme-color" content="#050507" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />
@@ -28,47 +28,43 @@ export const Layout: FC<Props> = ({
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet"
       />
       <link rel="stylesheet" href="/styles.css" />
     </head>
     <body>
       <div class="bg" aria-hidden="true"></div>
-      <div class="aurora" aria-hidden="true">
-        <span class="a1"></span>
-        <span class="a2"></span>
-        <span class="a3"></span>
-      </div>
+      <div class="scan" aria-hidden="true"></div>
       <div class="grain" aria-hidden="true"></div>
       {children}
     </body>
   </html>
 );
 
-export const EclipseMark: FC<{ size?: number }> = ({ size = 116 }) => (
-  <div class="mark" style={`width:${size}px;height:${size}px`} aria-hidden="true">
-    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="corona" cx="50%" cy="50%" r="50%">
-          <stop offset="40%" stop-color="#b066ff" stop-opacity="0" />
-          <stop offset="62%" stop-color="#b066ff" stop-opacity="0.85" />
-          <stop offset="78%" stop-color="#8a2bff" stop-opacity="0.35" />
-          <stop offset="100%" stop-color="#8a2bff" stop-opacity="0" />
-        </radialGradient>
-        <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
-          <stop offset="100%" stop-color="#b066ff" stop-opacity="0.2" />
-        </linearGradient>
-        <mask id="crescent">
-          <rect width="120" height="120" fill="black" />
-          <circle cx="60" cy="60" r="40" fill="white" />
-          <circle cx="66" cy="58" r="37" fill="black" />
-        </mask>
-      </defs>
-      <circle cx="60" cy="60" r="56" fill="url(#corona)" />
-      <circle cx="60" cy="60" r="40" fill="#05000a" stroke="url(#ring)" stroke-width="1" />
-      <rect width="120" height="120" fill="#ece6ff" mask="url(#crescent)" opacity="0.95" />
+type ReticleProps = { size?: number; ariaHidden?: boolean };
+
+export const Reticle: FC<ReticleProps> = ({ size = 56, ariaHidden = true }) => (
+  <span
+    class="mark"
+    style={`width:${size}px;height:${size}px`}
+    aria-hidden={ariaHidden ? "true" : undefined}
+  >
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#d9ff00" stroke-width="2" stroke-linecap="square" fill="none">
+        <path class="corner tl" d="M 8 8 L 8 22 M 8 8 L 22 8" />
+        <path class="corner tr" d="M 56 8 L 56 22 M 56 8 L 42 8" />
+        <path class="corner bl" d="M 8 56 L 8 42 M 8 56 L 22 56" />
+        <path class="corner br" d="M 56 56 L 56 42 M 56 56 L 42 56" />
+      </g>
+      <circle class="center" cx="32" cy="32" r="2" fill="#d9ff00" />
     </svg>
-  </div>
+  </span>
+);
+
+export const BrandRow: FC = () => (
+  <a href="/" class="brand-row" aria-label="aimcore home">
+    <Reticle size={20} />
+    <span>aimcore</span>
+  </a>
 );
