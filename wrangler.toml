@@ -1,0 +1,19 @@
+name = "umbraim"
+compatibility_date = "2025-01-15"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "public"
+
+# After running `npm run db:create`, paste the printed database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "umbraim"
+database_id = "REPLACE_WITH_D1_ID_AFTER_CREATE"
+
+[vars]
+APP_URL = "https://umbraim.win"
+EMAIL_FROM = "Umbraim <noreply@umbraim.win>"
+ADMIN_EMAIL = "support@umbracheats.app"
+COOKIE_DOMAIN = ".umbraim.win"
+
+# Set with: wrangler pages secret put RESEND_API_KEY
+# (do NOT put the key in this file)
