@@ -1,5 +1,5 @@
 {
-  "name": "umbraim",
+  "name": "aimcore",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,10 +7,10 @@
     "dev": "wrangler pages dev",
     "deploy": "wrangler pages deploy",
     "typecheck": "tsc --noEmit",
-    "db:create": "wrangler d1 create umbraim",
-    "db:migrate:local": "wrangler d1 execute umbraim --local --file=migrations/0001_init.sql",
-    "db:migrate:prod": "wrangler d1 execute umbraim --remote --file=migrations/0001_init.sql",
-    "db:studio:local": "wrangler d1 execute umbraim --local --command='SELECT name FROM sqlite_master WHERE type=\"table\"'"
+    "db:create": "wrangler d1 create aimcore",
+    "db:migrate:local": "wrangler d1 execute aimcore --local --file=migrations/0001_init.sql",
+    "db:migrate:prod": "wrangler d1 execute aimcore --remote --file=migrations/0001_init.sql",
+    "db:studio:local": "wrangler d1 execute aimcore --local --command='SELECT name FROM sqlite_master WHERE type=\"table\"'"
   },
   "dependencies": {
     "hono": "^4.6.14",

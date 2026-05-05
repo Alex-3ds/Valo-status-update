@@ -1,8 +1,8 @@
-# umbraim
+# aimcore
 
 A multi-tenant link-in-bio platform on Cloudflare Pages + D1.
 
-- Domain: `umbraim.win`
+- Domain: `aimcore.cc`
 - Stack: Cloudflare Pages Functions, Hono, D1 (SQLite), Resend
 - Theme: Umbra (purple + black, eclipse mark)
 
@@ -19,7 +19,7 @@ A multi-tenant link-in-bio platform on Cloudflare Pages + D1.
 npm install
 
 # 2. Create the D1 database (one-time, prints a database_id)
-npx wrangler d1 create umbraim
+npx wrangler d1 create aimcore
 # → paste the printed `database_id` into wrangler.toml
 
 # 3. Run migrations against the local D1 emulator
@@ -30,7 +30,7 @@ npm run dev
 # → http://localhost:8788
 ```
 
-## Deploy to umbraim.win
+## Deploy to aimcore.cc
 
 ```bash
 # 1. Apply migrations to the live D1
@@ -45,7 +45,7 @@ npm run deploy
 # → connects this directory to a Pages project
 
 # 4. In the Cloudflare dashboard:
-#    Pages → umbraim → Custom domains → add umbraim.win
+#    Pages → aimcore → Custom domains → add aimcore.cc
 #    DNS will be auto-configured if your registrar uses Cloudflare nameservers,
 #    otherwise add the CNAME shown.
 ```
@@ -86,7 +86,7 @@ wrangler.toml          CF Pages config + D1 binding + vars
 | `APP_URL` | `wrangler.toml [vars]` | Base URL for outbound links/emails |
 | `EMAIL_FROM` | `wrangler.toml [vars]` | "From" address for Resend |
 | `ADMIN_EMAIL` | `wrangler.toml [vars]` | Email that can access `/admin` |
-| `COOKIE_DOMAIN` | `wrangler.toml [vars]` | Cookie scope (`.umbraim.win`) |
+| `COOKIE_DOMAIN` | `wrangler.toml [vars]` | Cookie scope (`.aimcore.cc`) |
 | `RESEND_API_KEY` | `wrangler pages secret put` | Secret. Used to send verification emails. |
 
 ## Notes for next phases

@@ -7,9 +7,9 @@ type Props = PropsWithChildren<{
 }>;
 
 export const Layout: FC<Props> = ({
-  title = "umbraim — your link, your way",
+  title = "aimcore — your link, your way",
   description = "A sharp, fast link-in-bio for creators. Build a branded page in seconds.",
-  ogUrl = "https://umbraim.win/",
+  ogUrl = "https://aimcore.cc/",
   children,
 }) => (
   <html lang="en">

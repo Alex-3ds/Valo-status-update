@@ -1,4 +1,4 @@
--- Umbraim initial schema
+-- Aimcore initial schema
 -- Times are stored as INTEGER unix milliseconds.
 -- Booleans are INTEGER 0/1.
 

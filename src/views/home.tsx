@@ -11,7 +11,7 @@ export const HomePage: FC = () => (
             <circle cx="14" cy="11" r="8" fill="#0a0014" />
           </svg>
         </span>
-        <span class="brand-text">umbraim</span>
+        <span class="brand-text">aimcore</span>
       </a>
       <nav class="nav-links">
         <a href="/login">Log in</a>
@@ -22,7 +22,7 @@ export const HomePage: FC = () => (
     <main class="home">
       <div class="hero reveal d1">
         <EclipseMark />
-        <h1 class="brand">UMBRAIM</h1>
+        <h1 class="brand">AIMCORE</h1>
         <p class="tag">
           <span class="dot"></span>One link. Every channel. Built for creators.
         </p>
@@ -69,7 +69,7 @@ export const HomePage: FC = () => (
       </section>
 
       <footer class="reveal d3">
-        © <span>{new Date().getFullYear()}</span> umbraim · made for creators
+        © <span>{new Date().getFullYear()}</span> aimcore · made for creators
       </footer>
     </main>
   </Layout>

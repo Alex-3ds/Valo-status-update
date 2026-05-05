@@ -2,7 +2,7 @@ import type { FC } from "hono/jsx";
 import { Layout } from "./layout";
 
 export const ErrorPage: FC<{ status: number; message: string }> = ({ status, message }) => (
-  <Layout title={`${status} — umbraim`}>
+  <Layout title={`${status} — aimcore`}>
     <main class="home">
       <div class="hero">
         <h1 class="brand" style="font-size:clamp(48px,10vw,96px)">{status}</h1>
